@@ -81,23 +81,11 @@ public class ClubSkeleton extends Object {
                                + nf.format(right));
             String res = ci.getNews();
             result.put("result", res);
-         }
-         
-         
-         else if(method.equals("subtract")){
-            System.out.println("request: "+nf.format(left)+" - "
+         }else if(method.equals("getFAQ")){
+             //code to return the About Us page
+            System.out.println("request: "+nf.format(left)+" + "
                                + nf.format(right));
-            double res = ci.subtract(left, right);
-            result.put("result", res);
-         }else if(method.equals("multiply")){
-            System.out.println("request: "+nf.format(left)+" * "
-                               + nf.format(right));
-            double res = ci.multiply(left, right);
-            result.put("result", res);
-         }else if(method.equals("divide")){
-            System.out.println("request: "+nf.format(left)+" / "
-                               + nf.format(right));
-            double res = ci.divide(left, right);
+            String res = ci.getFAQ();
             result.put("result", res);
          }else if(method.equals("whoAreYou")){
             System.out.println("request: whoAreYou");

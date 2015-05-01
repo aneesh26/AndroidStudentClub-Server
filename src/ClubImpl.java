@@ -39,12 +39,24 @@ import org.json.simple.parser.JSONParser;
  * @author Tim Lindquist
  * @version 2/1/2015
  **/
-public class ClubImpl extends Object implements Club {
+public class ClubImpl  {
    
     public String getAboutUs(){
-       String fileContent = this.getJsonFromResource();
-     // return left + right;
-       return fileContent;
+    	JSONParser parser = new JSONParser();
+        
+        Object obj = null;
+        try {
+            File f = new File(".");
+            System.out.println(f.getAbsolutePath());
+            File relative = new File("AboutUs.json");
+            obj = parser.parse(new FileReader(relative));
+        } catch (Exception ex) {
+            Logger.getLogger(ClubImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+            JSONObject jsonObject = (JSONObject) obj;
+            return jsonObject.toJSONString();
+ 
    }
     
     public String getEvents() throws IOException{
@@ -80,49 +92,28 @@ public class ClubImpl extends Object implements Club {
             JSONObject jsonObject = (JSONObject) obj;
             return jsonObject.toJSONString();
     }
-   public double subtract(double left, double right){
-      return left - right;
-   }
-   public double multiply(double left, double right){
-      return left * right;
-   }
-   public double divide(double numerator, double denominator){
-      return numerator / denominator;
-   }
-   public String whoAreYou(){
-      return "Me, why I am the java calculator service using json-rpc.";
-   }
-   
-   public static String getJsonFromResource() {
-
-        BufferedReader r = null;
-       try {
-         //  String filePath = "C:\\Users\\A\\Documents\\NetBeansProjects\\StudentClubServer\\dist\\AboutUs.txt";
-          // System.out.println("File Path : " + filePath);
-           
-           File relative = new File("AboutUs.txt");
-           r = new BufferedReader( new FileReader(relative) );
-       } catch (FileNotFoundException ex) {
-           Logger.getLogger(ClubImpl.class.getName()).log(Level.SEVERE, null, ex);
-       }
-        StringBuilder stringBuilder = new StringBuilder();
-        String line;
-        String jsonString = null;
+    
+    public String getFAQ(){
+    	JSONParser parser = new JSONParser();
+        
+        Object obj = null;
         try {
-            while (( line = r.readLine() ) != null) {
-
-                stringBuilder.append( line );
-            }
-            jsonString = stringBuilder.toString();
+            File f = new File(".");
+            System.out.println(f.getAbsolutePath());
+            File relative = new File("FAQs.json");
+            obj = parser.parse(new FileReader(relative));
+        } catch (Exception ex) {
+            Logger.getLogger(ClubImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch (Exception e) {
-           // Log.e( "GetJsonFromResource", Log.getStackTraceString( e ) );
-            Logger.getLogger(ClubImpl.class.getName()).log(Level.SEVERE, null, e);
-        }
-        return jsonString;
-    }
+ 
+            JSONObject jsonObject = (JSONObject) obj;
+            return jsonObject.toJSONString();
+ 
+   }   public String whoAreYou(){
+      return "Me, why I am the java Student Club service using json-rpc.";
+   }
    
-   
+     
    
    
    
