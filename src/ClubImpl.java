@@ -14,31 +14,27 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 /**
- * Copyright (c) 2014 Tim Lindquist,
+ * Copyright 2015 Aneesh Shastry
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ *  Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * <p/>
- * Purpose: This class is part of an example developed for the mobile
- * computing class at ASU Poly. The application provides a calculator service.
- * The client and service are both written in Java and they 
- * communicate using JSON-RPC.
- * <p/>
- * The Caclulator interface provides the method definitions used by the client
- * and implemented by the calculator service.
  *
- * @author Tim Lindquist
- * @version 2/1/2015
- **/
+ * Purpose: This is a Student Club App to enable Clubs to share information with its members.
+ *          This is the server code to implement the backend logic 
+ *
+ * @author : Aneesh Shastry  mailto:ashastry@asu.edu
+ *           MS Computer Science, CIDSE, IAFSE, Arizona State University
+ * @version : May 1, 2015
+ */
 public class ClubImpl  {
    
     public String getAboutUs(){
